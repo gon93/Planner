@@ -35,6 +35,8 @@ class TodoListViewController: UITableViewController {
     
     //MARK - Tableview Delegate Methods
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        //Print text of the selected cell
         print(itemArray[indexPath.row])
                 
         if(tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark)

@@ -32,7 +32,12 @@
                             <outlet property="delegate" destination="0xg-SG-ukN" id="xzy-ep-ee3"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Todoey" id="vly-wJ-XR5"/>
+                    <navigationItem key="navigationItem" title="Todoey" id="vly-wJ-XR5">
+                        <barButtonItem key="backBarButtonItem" title="00" id="8ky-xN-lHF"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="vLu-pN-YvA">
+                            <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kie-P4-hWJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -46,6 +51,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1Pp-12-ga4">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.016804177310000001" green="0.56697591150000004" blue="0.85674370659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
