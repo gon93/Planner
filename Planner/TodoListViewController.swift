@@ -12,10 +12,14 @@ class TodoListViewController: UITableViewController {
 
     var itemArray = ["Study", "Work", "Grocery", "Exercise"]
     
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        if let items = UserDefaults.standard.array(forKey: "Planner") as? [String]{
+            itemArray = items
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -37,7 +41,7 @@ class TodoListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         //Print text of the selected cell
-        print(itemArray[indexPath.row])
+        //print(itemArray[indexPath.row])
                 
         if(tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark)
         {
@@ -58,12 +62,17 @@ class TodoListViewController: UITableViewController {
         var textField = UITextField()
         
         let alert = UIAlertController(title: "Add New todo Item", message: "", preferredStyle: .alert)
+       
+        //If you  are in closure you need to use "self" to access the global variables.
         let action = UIAlertAction(title: "Add Item", style: .default){
             (action) in
             
             //What will happen once the user clicks the Add Item button on our UIAlert
-            print(textField.text)
+            //print(textField.text)
             self.itemArray.append(textField.text!)
+
+            //storing in local data
+            self.defaults.set(self.itemArray, forKey: "Planner")
             
             //refreshe the UI
             self.tableView.reloadData()
